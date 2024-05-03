@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/pages/main/index.css">
+    <title>Main</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="inner-header"></div>
+    </header>
+
+    <main class="container">
+
+        <div class="user-greeting">
+            <h1 id="greeting">Добро пожаловать</h1>
+            <a href="#">somebody@gmail.com</a>
+        </div>
+
+        <div class="card-side">
+            <span>Мои кошельки</span>
+            <div class="card-container"></div>
+            <a href="/pages/cards/">Смотреть все кошельки</a>
+        </div>
+
+        <div class="transaction-side">
+            <span>Последние транзакции</span>
+
+            <div class="transaction-place">
+                <div class="transaction-container-over">
+                    <span class="span1">ID</span>
+                    <span class="span2">Отправлено с кошелька</span>
+                    <span class="span3">Категория</span>
+                    <span class="span4">Сумма транзации</span>
+                    <span class="span5">Когда</span>
+                </div>
+                <div class="transaction-container"></div>
+            </div>
+
+            <a href="/pages/transactions/">Смотреть все оплаты</a>
+        </div>
+
+    </main>
+
+    <script type="module" src="/pages/main/index.js"></script>
+
+</body>
+
+</html>
