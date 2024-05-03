@@ -1,11 +1,18 @@
 {
   "users": [
     {
-      "id": "0.028156722991287353",
+      "id": "0.32470581414651645",
       "name": "Bobur",
       "surname": "Makhmadkulov",
       "email": "boburmakhmadkulov05@gmail.com",
       "password": "12012005"
+    },
+    {
+      "id": "0.581600668618591",
+      "name": "Bobur",
+      "surname": "Makhmadkulov",
+      "email": "sardor@gmail.com",
+      "password": "231242"
     }
   ]
 }
