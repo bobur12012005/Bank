@@ -35,7 +35,7 @@ form.onsubmit = (event) => {
             if (data.password === password) {
                 delete data.password
                 localStorage.setItem('user', JSON.stringify(data))
-                location.assign('/pages/main/')
+                location.assign('/')
             }  else {
                 alert('Wrong password!')
             }

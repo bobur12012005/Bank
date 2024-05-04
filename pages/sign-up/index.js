@@ -38,7 +38,7 @@ form.onsubmit = (event) => {
             axios.post(baseURL + '/users', user)
                 .then(res => {
                     if (res.status == 200 || res.status === 201) {
-                        location.assign('/pages/main/')
+                        location.assign('/pages/sign-in/')
                     }
                 })
         })

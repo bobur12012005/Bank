@@ -1,18 +1,20 @@
 {
   "users": [
     {
-      "id": "0.32470581414651645",
+      "id": "0.09777203208452101",
       "name": "Bobur",
       "surname": "Makhmadkulov",
       "email": "boburmakhmadkulov05@gmail.com",
       "password": "12012005"
     },
     {
-      "id": "0.581600668618591",
-      "name": "Bobur",
-      "surname": "Makhmadkulov",
-      "email": "sardor@gmail.com",
-      "password": "231242"
+      "id": "0.20825756299609433",
+      "name": "Bob",
+      "surname": "Morales",
+      "email": "bob@gmail.com",
+      "password": "12012005"
     }
-  ]
+  ],
+  "cards": [],
+  "transactions": []
 }

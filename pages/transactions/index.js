@@ -6,3 +6,7 @@ let container = document.querySelector('.transaction-container')
 
 createHeader(header)
 reloadTransactions(array, container)
+
+let userEmail = document.querySelector('#user-email')
+let loc = JSON.parse(localStorage.getItem('user'))
+userEmail.innerHTML = loc.email

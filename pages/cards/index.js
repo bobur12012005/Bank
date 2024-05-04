@@ -6,3 +6,7 @@ let container = document.querySelector('.card-container')
 
 createHeader(header)
 reloadCards(array, container)
+
+let userEmail = document.querySelector('#user-email')
+let loc = JSON.parse(localStorage.getItem('user'))
+userEmail.innerHTML = loc.email

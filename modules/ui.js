@@ -29,7 +29,7 @@ export function createHeader(place) {
     leaveButton.append(leaveButtonIcon)
 
     leaveButton.onclick = () => {
-        location.assign('/')
+        location.assign('/pages/sign-in/')
     }
 }
 
