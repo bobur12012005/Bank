@@ -16,7 +16,7 @@ export function createHeader(place) {
     transactionLink.innerHTML = 'Мои транзакции'
     emailLink.innerHTML = 'bank@gmail.com'
 
-    leaveButtonIcon.src = '/public/icons/leave.svg'
+    leaveButtonIcon.src = '/icons/leave.svg'
 
     mainLink.href = '/pages/main/'
     cardLink.href = '/pages/cards/'
