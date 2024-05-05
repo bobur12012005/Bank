@@ -1,20 +1,38 @@
 {
   "users": [
     {
-      "id": "0.09777203208452101",
+      "id": "0.12124111395368886",
       "name": "Bobur",
       "surname": "Makhmadkulov",
       "email": "boburmakhmadkulov05@gmail.com",
       "password": "12012005"
-    },
-    {
-      "id": "0.20825756299609433",
-      "name": "Bob",
-      "surname": "Morales",
-      "email": "bob@gmail.com",
-      "password": "12012005"
     }
   ],
-  "cards": [],
+  "cards": [
+    {
+      "id": "0.5968605528868551",
+      "userId": "0.12124111395368886",
+      "name": "Humo",
+      "currency": "rub"
+    },
+    {
+      "id": "0.04041581340467193",
+      "userId": "0.12124111395368886",
+      "name": "Visa",
+      "currency": "usd"
+    },
+    {
+      "id": "0.9230583262378746",
+      "userId": "0.12124111395368886",
+      "name": "UzCard",
+      "currency": "uzs"
+    },
+    {
+      "id": "0.830056482714451",
+      "userId": "0.12124111395368886",
+      "name": "UzCard",
+      "currency": "usd"
+    }
+  ],
   "transactions": []
 }

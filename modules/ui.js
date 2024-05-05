@@ -18,7 +18,7 @@ export function createHeader(place) {
 
     leaveButtonIcon.src = '/icons/leave.svg'
 
-    mainLink.href = '/pages/main/'
+    mainLink.href = '/'
     cardLink.href = '/pages/cards/'
     transactionLink.href = '/pages/transactions/'
     emailLink.href = '#'
@@ -33,20 +33,24 @@ export function createHeader(place) {
     }
 }
 
-export function reloadCards(obj, place) {
-    let card = document.createElement('div')
-    let cardType = document.createElement('span')
-    let cardCurrency = document.createElement('span')
+export function reloadCards(arr, place) {
+    place.innerHTML = ""
 
-    card.classList.add('card')
-    cardType.classList.add('cardType')
-    cardCurrency.classList.add('cardCurrency')
+    for (let item of arr) {
+        let card = document.createElement('div')
+        let cardType = document.createElement('span')
+        let cardCurrency = document.createElement('span')
 
-    cardType.innerHTML = ""
-    cardCurrency.innerHTML = ""
+        card.classList.add('card')
+        cardType.classList.add('cardType')
+        cardCurrency.classList.add('cardCurrency')
 
-    place.append(card)
-    card.append(cardType, cardCurrency)
+        cardType.innerHTML = item.name
+        cardCurrency.innerHTML = item.currency
+
+        place.append(card)
+        card.append(cardType, cardCurrency)
+    }
 }
 
 

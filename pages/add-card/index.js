@@ -26,7 +26,6 @@ form.onsubmit = (event) => {
     axios.post(baseURL + '/cards', card)
         .then(res => {
             if (res.status == 200 || res.status === 201) {
-                localStorage.setItem('wallet', JSON.stringify(res.data))
                 location.assign('/pages/cards/')
             }
         })
