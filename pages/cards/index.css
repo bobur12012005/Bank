@@ -76,6 +76,7 @@ header {
             text-decoration: none;
             font-size: 18px;
             font-weight: 700;
+            width: fit-content;
 
             &:hover {
                 text-decoration: underline;

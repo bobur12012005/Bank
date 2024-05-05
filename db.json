@@ -8,31 +8,6 @@
       "password": "12012005"
     }
   ],
-  "cards": [
-    {
-      "id": "0.5968605528868551",
-      "userId": "0.12124111395368886",
-      "name": "Humo",
-      "currency": "rub"
-    },
-    {
-      "id": "0.04041581340467193",
-      "userId": "0.12124111395368886",
-      "name": "Visa",
-      "currency": "usd"
-    },
-    {
-      "id": "0.9230583262378746",
-      "userId": "0.12124111395368886",
-      "name": "UzCard",
-      "currency": "uzs"
-    },
-    {
-      "id": "0.830056482714451",
-      "userId": "0.12124111395368886",
-      "name": "UzCard",
-      "currency": "usd"
-    }
-  ],
+  "cards": [],
   "transactions": []
 }
