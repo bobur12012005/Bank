@@ -1,12 +1,17 @@
 import { createHeader, reloadCards } from "../../modules/ui.js"
 
-let array = [1, 2, 3, 4, 5, 6]
+let wallet = JSON.parse(localStorage.getItem('wallet'))
 let header = document.querySelector('header .inner-header')
 let container = document.querySelector('.card-container')
 
 createHeader(header)
-reloadCards(array, container)
+reloadCards(wallet, container)
 
 let userEmail = document.querySelector('#user-email')
 let loc = JSON.parse(localStorage.getItem('user'))
 userEmail.innerHTML = loc.email
+
+let addCardBtn = document.querySelector('#add-card')
+addCardBtn.onclick = () => {
+    location.assign('/pages/add-card/')
+}

@@ -33,25 +33,22 @@ export function createHeader(place) {
     }
 }
 
-export function reloadCards(arr, place) {
-    place.innerHTML = ""
+export function reloadCards(obj, place) {
+    let card = document.createElement('div')
+    let cardType = document.createElement('span')
+    let cardCurrency = document.createElement('span')
 
-    for (let item of arr) {
-        let card = document.createElement('div')
-        let cardType = document.createElement('span')
-        let cardCurrency = document.createElement('span')
+    card.classList.add('card')
+    cardType.classList.add('cardType')
+    cardCurrency.classList.add('cardCurrency')
 
-        card.classList.add('card')
-        cardType.classList.add('cardType')
-        cardCurrency.classList.add('cardCurrency')
+    cardType.innerHTML = ""
+    cardCurrency.innerHTML = ""
 
-        cardType.innerHTML = 'visa'
-        cardCurrency.innerHTML = 'rub'
-
-        place.append(card)
-        card.append(cardType, cardCurrency)
-    }
+    place.append(card)
+    card.append(cardType, cardCurrency)
 }
+
 
 export function reloadTransactions(arr, place) {
     place.innerHTML = ""
