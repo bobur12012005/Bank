@@ -1,4 +1,5 @@
 import axios from "axios"
+import {isError} from "../../modules/status.js"
 
 let baseURL = import.meta.env.VITE_BASE_URL
 let form = document.forms.namedItem('card-adding')
@@ -19,7 +20,7 @@ form.onsubmit = (event) => {
     let { name, currency } = card
 
     if (name === "" || currency === 'currency') {
-        alert('Error! Fill both of the fields!')
+        isError('error')
         return
     }
 
@@ -27,6 +28,7 @@ form.onsubmit = (event) => {
         .then(res => {
             if (res.status == 200 || res.status === 201) {
                 location.assign('/pages/cards/')
+                isError('success')
             }
         })
 }

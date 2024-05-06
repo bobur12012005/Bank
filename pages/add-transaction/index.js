@@ -15,12 +15,13 @@ form.onsubmit = (event) => {
         cardId: "",
         fromCard: fm.get('fromCard'),
         amount: fm.get('amount'),
-        category: fm.get('category')
+        category: fm.get('category'),
+        time: new Date().toLocaleDateString()
     }
 
     let { fromCard, amount, category } = transaction
 
-    if (fromCard === "" || amount < 100 || category === "") {
+    if (fromCard === "" || amount === "" || category === "") {
         alert('Error! Fill all the fields!')
         return
     }

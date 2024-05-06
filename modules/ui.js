@@ -53,7 +53,6 @@ export function reloadCards(arr, place) {
     }
 }
 
-
 export function reloadTransactions(arr, place) {
     place.innerHTML = ""
 
@@ -75,8 +74,8 @@ export function reloadTransactions(arr, place) {
         transactionCardId.innerHTML = item.id
         transactionCardType.innerHTML = item.fromCard
         transactionCategory.innerHTML = item.category
-        transactionAmount.innerHTML = "$" + item.amount
-        transactionTime.innerHTML = '4 дня назад'
+        transactionAmount.innerHTML = item.amount
+        transactionTime.innerHTML = item.time
 
         place.append(transaction)
         transaction.append(transactionCardId, transactionCardType, transactionCategory, transactionAmount, transactionTime)

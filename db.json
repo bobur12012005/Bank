@@ -1,29 +1,5 @@
 {
-  "users": [
-    {
-      "id": "0.12124111395368886",
-      "name": "Bobur",
-      "surname": "Makhmadkulov",
-      "email": "boburmakhmadkulov05@gmail.com",
-      "password": "12012005"
-    }
-  ],
-  "cards": [
-    {
-      "id": "0.661749179149578",
-      "userId": "0.12124111395368886",
-      "name": "Visa",
-      "currency": "usd"
-    }
-  ],
-  "transactions": [
-    {
-      "id": "47167684155",
-      "userId": "0.12124111395368886",
-      "cardId": "",
-      "fromCard": "Visa",
-      "amount": "40000",
-      "category": "Автомобиль"
-    }
-  ]
+  "users": [],
+  "cards": [],
+  "transactions": []
 }
