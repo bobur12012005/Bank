@@ -8,7 +8,15 @@ let container = document.querySelector('.card-container')
 createHeader(header)
 
 axios.get(baseURL + '/cards')
-.then(res => reloadCards(res.data, container))
+    .then(res => {
+        if (res.data.length === 0) {
+            container.innerHTML = "+"
+            container.classList.add('empty-container')
+        } else {
+            container.classList.remove('empty-container')
+            reloadCards(res.data, container)
+        }
+    })
 
 let userEmail = document.querySelector('#user-email')
 let loc = JSON.parse(localStorage.getItem('user'))

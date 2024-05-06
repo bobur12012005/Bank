@@ -8,6 +8,19 @@
       "password": "12012005"
     }
   ],
-  "cards": [],
+  "cards": [
+    {
+      "id": "0.30331199599285363",
+      "userId": "0.12124111395368886",
+      "name": "UzCard",
+      "currency": "uzs"
+    },
+    {
+      "id": "0.13127115109311482",
+      "userId": "0.12124111395368886",
+      "name": "UzCard",
+      "currency": "rub"
+    }
+  ],
   "transactions": []
 }

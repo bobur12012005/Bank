@@ -132,3 +132,16 @@ header {
         }
     }
 }
+
+.empty-container {
+    width: 280px;
+    height: 160px;
+    border-radius: 10px;
+    border: 2px dashed #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 300;
+    cursor: pointer;
+}
