@@ -1,6 +1,5 @@
 import axios from "axios"
 import { createHeader, reloadCards, reloadTransactions } from "/modules/ui.js"
-
 let baseURL = import.meta.env.VITE_BASE_URL
 
 let greeting = document.querySelector('#greeting')
@@ -27,5 +26,7 @@ axios.get(baseURL + '/cards')
     })
 
 let transactionContainer = document.querySelector('.transaction-container')
-let array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-reloadTransactions(array2, transactionContainer)
+axios.get(baseURL + '/transactions')
+.then(res => {
+    reloadTransactions(res.data, transactionContainer)
+})

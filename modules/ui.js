@@ -72,10 +72,10 @@ export function reloadTransactions(arr, place) {
         transactionAmount.classList.add('transaction-amount')
         transactionTime.classList.add('transaction-time')
 
-        transactionCardId.innerHTML = 1234567890
-        transactionCardType.innerHTML = 'VISA'
-        transactionCategory.innerHTML = 'Автомобиль'
-        transactionAmount.innerHTML = '$400,000'
+        transactionCardId.innerHTML = item.id
+        transactionCardType.innerHTML = item.fromCard
+        transactionCategory.innerHTML = item.category
+        transactionAmount.innerHTML = "$" + item.amount
         transactionTime.innerHTML = '4 дня назад'
 
         place.append(transaction)

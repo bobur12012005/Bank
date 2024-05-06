@@ -145,10 +145,12 @@ header {
 
             .transaction-card-type {
                 width: 35%;
+                text-transform: uppercase;
             }
 
             .transaction-category {
                 width: 20%;
+                text-transform: capitalize;
             }
 
             .transaction-amount {
@@ -158,6 +160,22 @@ header {
             .transaction-time {
                 width: 10%;
             }
+        }
+    }
+
+    #add-transactions {
+        margin-top: 25px;
+        width: 450px;
+        height: 50px;
+        background: blue;
+        color: white;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
         }
     }
 }
