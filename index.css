@@ -60,7 +60,7 @@ header {
     width: 1200px;
     margin: 0 auto;
     margin-top: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 
     .user-greeting {
         display: flex;
@@ -228,4 +228,10 @@ header {
             width: fit-content;
         }
     }
+}
+
+.empty-container {
+    font-size: 24px;
+    font-weight: 600;
+    color: #B9C0D1;
 }

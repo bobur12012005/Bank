@@ -16,7 +16,15 @@ createHeader(header)
 let cardContainer = document.querySelector('.card-container')
 
 axios.get(baseURL + '/cards')
-    .then(res => reloadCards(res.data, cardContainer))
+    .then(res => {
+        if (res.data.length === 0) {
+            cardContainer.innerHTML = 'У вас нет кошельков. Что-бы добавить переходите на вкладку "Мои кошельки" </br> или кликните по ссылке снизу.'
+            cardContainer.classList.add('empty-container')
+        } else {
+            cardContainer.classList.remove('empty-container')
+            reloadCards(res.data, cardContainer)
+        }
+    })
 
 let transactionContainer = document.querySelector('.transaction-container')
 let array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]

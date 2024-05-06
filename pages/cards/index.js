@@ -26,3 +26,9 @@ let addCardBtn = document.querySelector('#add-card')
 addCardBtn.onclick = () => {
     location.assign('/pages/add-card/')
 }
+
+container.onclick = () => {
+    if (container.classList.contains('empty-container')) {
+        location.assign('/pages/add-card/')
+    }
+}
