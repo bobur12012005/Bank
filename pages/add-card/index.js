@@ -28,7 +28,9 @@ form.onsubmit = (event) => {
         .then(res => {
             if (res.status == 200 || res.status === 201) {
                 isError('success', '')
-                location.assign('/pages/cards/')
+                setTimeout(() => {
+                    location.assign('/pages/cards/')
+                }, 3300)
             }
         })
 }

@@ -1,5 +1,5 @@
 import axios from "axios"
-import {isError} from "../../modules/status.js"
+import { isError } from "../../modules/status.js"
 
 let baseURL = import.meta.env.VITE_BASE_URL
 let form = document.forms.namedItem('transaction-adding')
@@ -31,7 +31,9 @@ form.onsubmit = (event) => {
         .then(res => {
             if (res.status == 200 || res.status === 201) {
                 isError('success', '')
-                location.assign('/pages/transactions/')
+                setTimeout(() => {
+                    location.assign('/pages/transactions/')
+                }, 3300)
             }
         })
 }

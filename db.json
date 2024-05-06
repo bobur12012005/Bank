@@ -20,7 +20,35 @@
       "userId": "0.09608270391537688",
       "name": "Visa",
       "currency": "usd"
+    },
+    {
+      "id": "0.21941435570399848",
+      "userId": "0.09608270391537688",
+      "name": "Humo",
+      "currency": "uzs"
+    },
+    {
+      "id": "0.44552961694439164",
+      "userId": "0.09608270391537688",
+      "name": "Visa",
+      "currency": "rub"
+    },
+    {
+      "id": "0.8241422155390699",
+      "userId": "0.09608270391537688",
+      "name": "World",
+      "currency": "rub"
     }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "id": "77749416350",
+      "userId": "0.09608270391537688",
+      "cardId": "",
+      "fromCard": "Humo",
+      "amount": "40000",
+      "category": "Автомобиль",
+      "time": "06.05.2024"
+    }
+  ]
 }

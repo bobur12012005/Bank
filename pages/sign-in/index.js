@@ -1,5 +1,5 @@
 import axios from "axios"
-import {isError} from "../../modules/status.js"
+import { isError } from "../../modules/status.js"
 
 let baseURL = import.meta.env.VITE_BASE_URL
 let form = document.forms.namedItem('sign-in')
@@ -38,8 +38,10 @@ form.onsubmit = (event) => {
                 isError('success', '')
                 delete data.password
                 localStorage.setItem('user', JSON.stringify(data))
-                location.assign('/')
-            }  else {
+                setTimeout(() => {
+                    location.assign('/')
+                }, 3300)
+            } else {
                 isError('error', 'Wrong password!')
             }
         })
