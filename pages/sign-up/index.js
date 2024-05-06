@@ -1,4 +1,6 @@
 import axios from "axios"
+import {isError} from "../../modules/status.js"
+
 let baseURL = import.meta.env.VITE_BASE_URL
 let form = document.forms.namedItem('sign-up')
 
@@ -24,20 +26,21 @@ form.onsubmit = (event) => {
     let { name, surname, email, password } = user
 
     if (!name || !patterns.name.test(name) || !surname || !patterns.surname.test(surname) || !email || !patterns.email.test(email) || password.length < 4) {
-        alert('Eroor! Fill all the fields correctly!')
+        isError('error', 'Fill all the fields correctly!')
         return
     }
 
     axios.get(baseURL + "/users?email=" + email)
         .then(res => {
             if (res.data.length > 0) {
-                alert('User already exists!')
+                isError('error', 'User already exists!')
                 return
             }
 
             axios.post(baseURL + '/users', user)
                 .then(res => {
                     if (res.status == 200 || res.status === 201) {
+                        isError('success', '')
                         location.assign('/pages/sign-in/')
                     }
                 })

@@ -1,5 +1,20 @@
 {
-  "users": [],
-  "cards": [],
+  "users": [
+    {
+      "id": "0.09608270391537688",
+      "name": "Bobur",
+      "surname": "Makhmadkulov",
+      "email": "boburmakhmadkulov05@gmail.com",
+      "password": "12012005"
+    }
+  ],
+  "cards": [
+    {
+      "id": "0.03467473028204804",
+      "userId": "0.09608270391537688",
+      "name": "Humo",
+      "currency": "usd"
+    }
+  ],
   "transactions": []
 }

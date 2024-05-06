@@ -1,4 +1,5 @@
 import axios from "axios"
+import {isError} from "../../modules/status.js"
 
 let baseURL = import.meta.env.VITE_BASE_URL
 let form = document.forms.namedItem('transaction-adding')
@@ -22,13 +23,14 @@ form.onsubmit = (event) => {
     let { fromCard, amount, category } = transaction
 
     if (fromCard === "" || amount === "" || category === "") {
-        alert('Error! Fill all the fields!')
+        isError('error', 'Fill all the fields!')
         return
     }
 
     axios.post(baseURL + '/transactions', transaction)
         .then(res => {
             if (res.status == 200 || res.status === 201) {
+                isError('success', '')
                 location.assign('/pages/transactions/')
             }
         })

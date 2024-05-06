@@ -1,4 +1,6 @@
 import axios from "axios"
+import {isError} from "../../modules/status.js"
+
 let baseURL = import.meta.env.VITE_BASE_URL
 let form = document.forms.namedItem('sign-in')
 
@@ -19,25 +21,26 @@ form.onsubmit = (event) => {
     let { email, password } = user
 
     if (!email || !pattern.email.test(email) || password.length < 4) {
-        alert('Eroor! Fill both of the fields correctly!')
+        isError('error', 'Fill both of the fields correctly!')
         return
     }
 
     axios.get(baseURL + "/users?email=" + email)
         .then(res => {
             if (res.data.length === 0) {
-                alert('User is not found!')
+                isError('error', 'User is not found!')
                 return
             }
 
             let [data] = res.data
 
             if (data.password === password) {
+                isError('success', '')
                 delete data.password
                 localStorage.setItem('user', JSON.stringify(data))
                 location.assign('/')
             }  else {
-                alert('Wrong password!')
+                isError('error', 'Wrong password!')
             }
         })
 }
