@@ -38,6 +38,20 @@
       "userId": "0.09608270391537688",
       "name": "World",
       "currency": "rub"
+    },
+    {
+      "id": "0.04430891226730438",
+      "userId": "0.09608270391537688",
+      "name": "World",
+      "currency": "AWG",
+      "balance": "2000"
+    },
+    {
+      "id": "0.6758663492689554",
+      "userId": "0.09608270391537688",
+      "name": "World",
+      "currency": "MNT",
+      "balance": "2000"
     }
   ],
   "transactions": [
@@ -49,6 +63,24 @@
       "amount": "40000",
       "category": "Автомобиль",
       "time": "06.05.2024"
+    },
+    {
+      "id": "14221255036",
+      "userId": "0.09608270391537688",
+      "cardId": "",
+      "fromCard": "Humo",
+      "amount": "40000",
+      "category": "Автомобиль",
+      "time": "07.05.2024"
+    },
+    {
+      "id": "48826191130",
+      "userId": "0.09608270391537688",
+      "cardId": "",
+      "fromCard": "Humo",
+      "amount": "40000",
+      "category": "Автомобиль",
+      "time": "07.05.2024"
     }
   ]
 }

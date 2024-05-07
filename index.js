@@ -21,7 +21,7 @@ axios.get(baseURL + '/cards')
             cardContainer.classList.add('empty-container')
         } else {
             cardContainer.classList.remove('empty-container')
-            reloadCards(res.data.splice(1, 4), cardContainer)
+            reloadCards(res.data.splice(0, 4), cardContainer)
         }
     })
 
