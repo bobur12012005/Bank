@@ -1,9 +1,31 @@
 import axios from "axios"
-import { isError } from "../../modules/status.js"
+import {
+    isError
+} from "../../modules/status.js"
+import {
+    getData,
+    patchData,
+    postData,
+    user
+} from "../../modules/http.request.js"
 
-let baseURL = import.meta.env.VITE_BASE_URL
+
 let form = document.forms.namedItem('transaction-adding')
-let user = JSON.parse(localStorage.getItem('user'))
+let wallets_all = []
+const select = document.querySelector('select')
+
+
+
+getData('/cards?userId=' + user.id)
+    .then(res => {
+        for (let item of res) {
+            let opt = new Option(item.name, item.id)
+
+            select.append(opt)
+        }
+        wallets_all = res
+    })
+
 
 form.onsubmit = (event) => {
     event.preventDefault()
@@ -13,27 +35,35 @@ form.onsubmit = (event) => {
     let transaction = {
         id: String(Math.floor(Math.random() * 100000000000)),
         userId: user.id,
-        cardId: "",
-        fromCard: fm.get('fromCard'),
+        walletId: fm.get('wallet'),
         amount: fm.get('amount'),
         category: fm.get('category'),
         time: new Date().toLocaleDateString()
     }
 
-    let { fromCard, amount, category } = transaction
+    let {
+        fromCard,
+        amount,
+        category
+    } = transaction
 
     if (fromCard === "" || amount === "" || category === "") {
         isError('error', 'Fill all the fields!')
         return
     }
 
-    axios.post(baseURL + '/transactions', transaction)
+    const wallet_current = wallets_all.find(wallet => wallet.id === transaction.walletId)
+
+    delete wallet_current.id
+    delete wallet_current.userId
+
+    transaction.wallet = wallet_current
+
+
+    patchData('/cards/' + transaction.walletId, {
+            balance: Number(wallet_current.balance) - Number(transaction.amount)
+        })
         .then(res => {
-            if (res.status == 200 || res.status === 201) {
-                isError('success', '')
-                setTimeout(() => {
-                    location.assign('/pages/transactions/')
-                }, 3300)
-            }
+            
         })
 }

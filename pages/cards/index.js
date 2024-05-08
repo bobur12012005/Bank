@@ -1,25 +1,28 @@
-import axios from "axios"
-import { createHeader, reloadCards } from "../../modules/ui.js"
-let baseURL = import.meta.env.VITE_BASE_URL
+import {
+    createHeader,
+    reloadCards
+} from "../../modules/ui.js"
+import { getData } from "../../modules/http.request.js"
 
 let header = document.querySelector('header .inner-header')
 let container = document.querySelector('.card-container')
+let loc = JSON.parse(localStorage.getItem('user'))
 
 createHeader(header)
 
-axios.get(baseURL + '/cards')
+
+getData('/cards?userId=' + loc.id)
     .then(res => {
-        if (res.data.length === 0) {
+        if (res.length === 0) {
             container.innerHTML = "+"
             container.classList.add('empty-container')
         } else {
             container.classList.remove('empty-container')
-            reloadCards(res.data, container)
+            reloadCards(res, container)
         }
     })
 
 let userEmail = document.querySelector('#user-email')
-let loc = JSON.parse(localStorage.getItem('user'))
 userEmail.innerHTML = loc.email
 
 let addCardBtn = document.querySelector('#add-card')

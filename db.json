@@ -6,81 +6,23 @@
       "surname": "Makhmadkulov",
       "email": "boburmakhmadkulov05@gmail.com",
       "password": "12012005"
+    },
+    {
+      "id": "0.4515838855986569",
+      "name": "Daler",
+      "surname": "Sharifkulov",
+      "email": "dsarifkulo021@gmail.com",
+      "password": "1234"
     }
   ],
   "cards": [
     {
-      "id": "0.6394028630552064",
+      "id": "0.20633352799277938",
       "userId": "0.09608270391537688",
-      "name": "UzCard",
-      "currency": "uzs"
-    },
-    {
-      "id": "0.7539669587431581",
-      "userId": "0.09608270391537688",
-      "name": "Visa",
-      "currency": "usd"
-    },
-    {
-      "id": "0.21941435570399848",
-      "userId": "0.09608270391537688",
-      "name": "Humo",
-      "currency": "uzs"
-    },
-    {
-      "id": "0.44552961694439164",
-      "userId": "0.09608270391537688",
-      "name": "Visa",
-      "currency": "rub"
-    },
-    {
-      "id": "0.8241422155390699",
-      "userId": "0.09608270391537688",
-      "name": "World",
-      "currency": "rub"
-    },
-    {
-      "id": "0.04430891226730438",
-      "userId": "0.09608270391537688",
-      "name": "World",
-      "currency": "AWG",
-      "balance": "2000"
-    },
-    {
-      "id": "0.6758663492689554",
-      "userId": "0.09608270391537688",
-      "name": "World",
-      "currency": "MNT",
-      "balance": "2000"
+      "name": "Daler",
+      "currency": "AFN",
+      "balance": 900
     }
   ],
-  "transactions": [
-    {
-      "id": "77749416350",
-      "userId": "0.09608270391537688",
-      "cardId": "",
-      "fromCard": "Humo",
-      "amount": "40000",
-      "category": "Автомобиль",
-      "time": "06.05.2024"
-    },
-    {
-      "id": "14221255036",
-      "userId": "0.09608270391537688",
-      "cardId": "",
-      "fromCard": "Humo",
-      "amount": "40000",
-      "category": "Автомобиль",
-      "time": "07.05.2024"
-    },
-    {
-      "id": "48826191130",
-      "userId": "0.09608270391537688",
-      "cardId": "",
-      "fromCard": "Humo",
-      "amount": "40000",
-      "category": "Автомобиль",
-      "time": "07.05.2024"
-    }
-  ]
+  "transactions": []
 }
