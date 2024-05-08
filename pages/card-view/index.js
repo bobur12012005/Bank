@@ -18,3 +18,8 @@ card.addEventListener('mousemove', (event) => {
 card.addEventListener('mouseleave', () => {
     card.style.transform = ''
 })
+
+let backBtn = document.querySelector('.back-btn')
+backBtn.onclick = () => {
+    location.assign('/pages/cards/')
+}
