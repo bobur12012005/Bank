@@ -33,6 +33,18 @@ export function createHeader(place) {
     }
 }
 
+function geneateRGB() {
+    function random(up) {
+        return Math.ceil(Math.random() * up)
+    }
+
+    let r = random(255)
+    let g = random(255)
+    let b = random(255)
+
+    return `rgb(${r}, ${g}, ${b})`
+}
+
 export function reloadCards(arr, place) {
     place.innerHTML = ""
 
@@ -48,6 +60,9 @@ export function reloadCards(arr, place) {
         cardType.innerHTML = item.name
         cardCurrency.innerHTML = item.currency
 
+        card.style.background = `linear-gradient(90deg,${geneateRGB()}, ${geneateRGB()})`
+        
+        console.log(geneateRGB());
         place.append(card)
         card.append(cardType, cardCurrency)
 

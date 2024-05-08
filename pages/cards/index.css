@@ -94,8 +94,9 @@ header {
 
         .card {
             width: 280px;
+            color: rgba;
             height: 160px;
-            background: linear-gradient(aqua, blue);
+            /* background: linear-gradient(aqua, blue); */
             border-radius: 10px;
             padding: 20px 25px;
             display: flex;
