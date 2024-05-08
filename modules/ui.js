@@ -50,6 +50,10 @@ export function reloadCards(arr, place) {
 
         place.append(card)
         card.append(cardType, cardCurrency)
+
+        card.onclick = () => {
+            location.assign('/pages/card-view/')
+        }
     }
 }
 
