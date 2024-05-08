@@ -10,14 +10,17 @@
 
 <body>
 
-    <!-- <div class="box">
-        <h1>hello</h1>
-    </div> -->
-
     <div class="container">
         <div class="container-leftSide">
             <div class="leftSide-top">
-                <div class="card-number"></div>
+                <div class="card-number">
+                    <div class="crd_nmbr">Order No: #00000000</div>
+                    <select name="select">
+                        <option value="uzs">UZS</option>
+                        <option value="usd">USD</option>
+                        <option value="rub">RUB</option>
+                    </select>
+                </div>
                 <div class="item-box">
                     <span>item..............................$00</span>
                     <span>item..............................$00</span>
@@ -27,42 +30,44 @@
             </div>
             <div class="leftSide-bottom">
                 <div class="totals-box">
-                    <span>Sub Total.........................$00</span>
-                    <span>Tax(0%)...........................$00</span>
+                    <span>Sub Total....................$00</span>
+                    <span>Tax(0%).......................$00</span>
                     <div></div>
                     <span>Total.............................$00</span>
                 </div>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit accusamus molestiae cupiditate,
-                    perspiciatis dicta, esse est sapiente, illum laudantium repudiandae eligendi consequuntur.
-                    Aspernatur laborum ea eveniet assumenda beatae nam sunt ducimus cumque reiciendis ipsam quisquam
-                    atque minus perferendis quod ullam quia porro eius, quaerat possimus? Quae minima error quis ut!
+                <p class="loremIPSM">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore ratione deserunt placeat quis.
                 </p>
             </div>
         </div>
         <div class="container-rightSide">
-            <div class="cardView-container"></div>
+            <div class="cardView">
+                <div class="card">
+                    <h1>hello</h1>
+                </div>
+            </div>
             <form class="other" name="card-data">
-                <div class="card-data-left">
-                    <div class="card-data-left-top">
+                <div class="card-data-top">
+                    <div class="card-data-top-left">
                         <input type="text" placeholder="Cardholder Name" name="name">
                         <input type="number" placeholder="Card Number" name="cardNumber">
                     </div>
-                    <div class="card-data-left-bottom">
-                        <input type="date" placeholder="Expiration Date">
-                        <input type="password" placeholder="Security Code">
+
+                    <div class="card-data-top-right">
+                        <p class="loremIPSM">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore ratione deserunt placeat
+                            quis.
+                        </p>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <span>I Agree to Terms</span>
+                        </div>
                     </div>
                 </div>
-                <div class="card-data-right">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt voluptatibus quos rem ea nemo
-                        illum, quaerat, expedita beatae repellat dolore blanditiis tempore sit consequatur sed doloribus
-                        corporis, ipsa quae iste ullam eveniet? Eligendi iusto a ipsa reiciendis tempore rerum maxime
-                        possimus mollitia libero? Voluptatibus placeat repellendus perspiciatis nobis veritatis enim.
-                    </p>
-                    <div class="checkbox">
-                        <input type="checkbox">
-                        <span>I Agree to Terms</span>
-                    </div>
+
+                <div class="card-data-bottom">
+                    <input type="date" placeholder="Expiration Date">
+                    <input type="password" placeholder="Security Code">
                     <button>Pay Now</button>
                 </div>
             </form>
