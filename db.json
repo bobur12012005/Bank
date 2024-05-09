@@ -1,28 +1,56 @@
 {
   "users": [
     {
-      "id": "0.09608270391537688",
+      "id": "0.091688900481522",
       "name": "Bobur",
       "surname": "Makhmadkulov",
       "email": "boburmakhmadkulov05@gmail.com",
       "password": "12012005"
     },
     {
-      "id": "0.4515838855986569",
-      "name": "Daler",
-      "surname": "Sharifkulov",
-      "email": "dsarifkulo021@gmail.com",
-      "password": "1234"
+      "id": "0.23103060488361082",
+      "name": "Sardor",
+      "surname": "Khatamov",
+      "email": "sardorjn2006@gmail.com",
+      "password": "123456789"
     }
   ],
   "cards": [
     {
-      "id": "0.20633352799277938",
-      "userId": "0.09608270391537688",
-      "name": "Daler",
-      "currency": "AFN",
-      "balance": 900
+      "id": "0.08038046532562615",
+      "userId": "0.091688900481522",
+      "name": "Visa",
+      "currency": "USD",
+      "balance": "10000"
+    },
+    {
+      "id": "0.6251131942552244",
+      "userId": "0.091688900481522",
+      "name": "UzCard",
+      "currency": "UZS",
+      "balance": "9001"
+    },
+    {
+      "id": "0.3988745504530593",
+      "userId": "0.091688900481522",
+      "name": "Humo",
+      "currency": "UZS",
+      "balance": "989002"
     }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "id": "97251267162",
+      "userId": "0.091688900481522",
+      "walletId": "0.6251131942552244",
+      "amount": "999",
+      "category": "Автомобиль",
+      "time": "08.05.2024",
+      "wallet": {
+        "name": "UzCard",
+        "currency": "UZS",
+        "balance": "10000"
+      }
+    }
+  ]
 }

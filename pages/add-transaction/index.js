@@ -61,9 +61,9 @@ form.onsubmit = (event) => {
 
 
     patchData('/cards/' + transaction.walletId, {
-            balance: Number(wallet_current.balance) - Number(transaction.amount)
-        })
-        .then(res => {
-            
+        balance: String(Number(wallet_current.balance) - Number(transaction.amount))
+    })
+        .then(() => {
+            postData('/transactions/', transaction)
         })
 }
