@@ -1,20 +1,9 @@
-import axios from "axios"
-import {
-    isError
-} from "../../modules/status.js"
-import {
-    getData,
-    patchData,
-    postData,
-    user
-} from "../../modules/http.request.js"
-
+import { isError } from "../../modules/status.js"
+import { getData, patchData, postData, user } from "../../modules/http.request.js"
 
 let form = document.forms.namedItem('transaction-adding')
 let wallets_all = []
 const select = document.querySelector('select')
-
-
 
 getData('/cards?userId=' + user.id)
     .then(res => {
@@ -38,7 +27,8 @@ form.onsubmit = (event) => {
         walletId: fm.get('wallet'),
         amount: fm.get('amount'),
         category: fm.get('category'),
-        time: new Date().toLocaleDateString()
+        time: new Date().toLocaleDateString(),
+        wallet: {}
     }
 
     let {

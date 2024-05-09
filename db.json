@@ -28,7 +28,7 @@
       "userId": "0.091688900481522",
       "name": "UzCard",
       "currency": "UZS",
-      "balance": "9001"
+      "balance": "7001"
     },
     {
       "id": "0.3988745504530593",
@@ -40,16 +40,16 @@
   ],
   "transactions": [
     {
-      "id": "97251267162",
+      "id": "94295175633",
       "userId": "0.091688900481522",
       "walletId": "0.6251131942552244",
-      "amount": "999",
-      "category": "Автомобиль",
-      "time": "08.05.2024",
+      "amount": "1000",
+      "category": "Телефон",
+      "time": "09.05.2024",
       "wallet": {
         "name": "UzCard",
         "currency": "UZS",
-        "balance": "10000"
+        "balance": "8001"
       }
     }
   ]
