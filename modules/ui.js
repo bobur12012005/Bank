@@ -32,7 +32,7 @@ export function createHeader(email, place) {
         let result = confirm("Вы уверены что хотите выйти из аккаунта?")
 
         if (result !== true) return
-        localStorage.removeItem("user");
+        localStorage.removeItem("user")
         location.assign('/pages/sign-in/')
     }
 
