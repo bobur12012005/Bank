@@ -35,6 +35,23 @@ export function createHeader(email, place) {
         localStorage.removeItem("user");
         location.assign('/pages/sign-in/')
     }
+
+    let links = [mainLink, cardLink, transactionLink]
+
+    links.forEach(link => {
+        link.onclick = () => {
+            localStorage.setItem('activeLink', link.href)
+            let activeLink = localStorage.getItem('activeLink')
+
+            if (activeLink) {
+                let activeLinkElement = links.find(l => l.href === activeLink)
+                if (activeLinkElement) {
+                    links.forEach(l => l.style.color = 'black')
+                    activeLinkElement.style.color = 'blue'
+                }
+            }
+        }
+    })
 }
 
 function geneateRGB() {
