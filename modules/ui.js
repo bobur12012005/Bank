@@ -61,6 +61,8 @@ export function reloadCards(arr, place) {
         cardType.classList.add('cardType')
         cardCurrency.classList.add('cardCurrency')
 
+        card.style.cursor = 'pointer'
+
         cardType.innerHTML = item.name
         cardCurrency.innerHTML = item.currency
 

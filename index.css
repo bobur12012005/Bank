@@ -106,12 +106,17 @@ header {
             .card {
                 width: 280px;
                 height: 160px;
-                background: linear-gradient(aqua, blue);
                 border-radius: 10px;
                 padding: 20px 25px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                transition: transform 1s;
+                transform-style: preserve-3d;
+
+                &:hover {
+                    transform: rotateY(360deg);
+                }
 
                 .cardType {
                     font-size: 24px;
