@@ -1,19 +1,13 @@
-import {
-	createHeader,
-	reloadCards,
-	reloadTransactions
-} from "/modules/ui.js"
-import {
-	getData
-} from "./modules/http.request"
+import { createHeader, reloadCards, reloadTransactions } from "/modules/ui.js"
+import { getData } from "./modules/http.request"
 
 let greeting = document.querySelector('#greeting')
 let userEmail = document.querySelector('#user-email')
 let header = document.querySelector('header .inner-header')
 let cardContainer = document.querySelector('.card-container')
 let transactionContainer = document.querySelector('.transaction-container')
-
 let loc = JSON.parse(localStorage.getItem('user'))
+
 greeting.innerHTML = `Добро пожаловать, ${loc.name}`
 userEmail.innerHTML = loc.email
 
@@ -30,7 +24,6 @@ getData('/cards?userId=' + loc.id)
 			reloadCards(res.splice(0, 4), cardContainer)
 		}
 	})
-
 
 getData('/transactions?userId=' + loc.id)
 	.then(res => {
