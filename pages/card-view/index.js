@@ -1,23 +1,23 @@
-const card = document.querySelector('.card')
+let card = document.querySelector('.card')
 
-card.addEventListener('dblclick', function () {
+card.ondblclick = () => {
     card.classList.toggle('is-flipped')
-})
+}
 
-card.addEventListener('mousemove', (event) => {
-    const rect = card.getBoundingClientRect()
-    const x = event.clientX - rect.left
-    const y = event.clientY - rect.top
+card.onmousemove = (event) => {
+    let rect = card.getBoundingClientRect()
+    let x = event.clientX - rect.left
+    let y = event.clientY - rect.top
 
-    const rotateX = (y / rect.height - 0.5) * 40
-    const rotateY = (x / rect.width - 0.5) * -40
+    let rotateX = (y / rect.height - 0.5) * 40
+    let rotateY = (x / rect.width - 0.5) * -40
 
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-})
+}
 
-card.addEventListener('mouseleave', () => {
+card.onmouseleave = () => {
     card.style.transform = ''
-})
+}
 
 let backBtn = document.querySelector('.back-btn')
 backBtn.onclick = () => {
