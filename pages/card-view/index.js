@@ -1,4 +1,8 @@
+import axios from "axios"
+
 let card = document.querySelector('.card')
+let select = document.querySelector('#select')
+let backBtn = document.querySelector('.back-btn')
 
 card.ondblclick = () => {
     card.classList.toggle('is-flipped')
@@ -19,7 +23,19 @@ card.onmouseleave = () => {
     card.style.transform = ''
 }
 
-let backBtn = document.querySelector('.back-btn')
 backBtn.onclick = () => {
     location.assign('/pages/cards/')
 }
+
+axios.get('https://api.apilayer.com/fixer/symbols', {
+    headers: {
+        apikey: import.meta.env.VITE_API_KEY
+    }
+})
+    .then(res => {
+        let symbols = res.data.symbols
+        for (let key in symbols) {
+            let opt = new Option(`${key} (${symbols[key]})`, key)
+            select.append(opt)
+        }
+    })
