@@ -11,7 +11,7 @@ let loc = JSON.parse(localStorage.getItem('user'))
 greeting.innerHTML = `Добро пожаловать, ${loc.name}`
 userEmail.innerHTML = loc.email
 
-createHeader(header)
+createHeader(loc.email, header)
 
 getData('/cards?userId=' + loc.id)
 	.then(res => {

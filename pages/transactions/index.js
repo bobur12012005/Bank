@@ -7,7 +7,7 @@ let userEmail = document.querySelector('#user-email')
 let loc = JSON.parse(localStorage.getItem('user'))
 let addTransactionBtn = document.querySelector('#add-transactions')
 
-createHeader(header)
+createHeader(loc.email, header)
 
 getData('/transactions?userId=' + loc.id)
     .then(res => {

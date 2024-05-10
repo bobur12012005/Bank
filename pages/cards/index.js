@@ -7,7 +7,7 @@ let userEmail = document.querySelector('#user-email')
 let addCardBtn = document.querySelector('#add-card')
 let loc = JSON.parse(localStorage.getItem('user'))
 
-createHeader(header)
+createHeader(loc.email, header)
 
 getData('/cards?userId=' + loc.id)
     .then(res => {

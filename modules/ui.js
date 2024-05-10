@@ -1,4 +1,4 @@
-export function createHeader(place) {
+export function createHeader(email, place) {
     let leftLinks = document.createElement('div')
     let rightLinks = document.createElement('div')
     let mainLink = document.createElement('a')
@@ -14,7 +14,7 @@ export function createHeader(place) {
     mainLink.innerHTML = 'Главная'
     cardLink.innerHTML = 'Мои кошельки'
     transactionLink.innerHTML = 'Мои транзакции'
-    emailLink.innerHTML = 'bank@gmail.com'
+    emailLink.innerHTML = email
 
     leaveButtonIcon.src = '/icons/leave.svg'
 
@@ -29,6 +29,10 @@ export function createHeader(place) {
     leaveButton.append(leaveButtonIcon)
 
     leaveButton.onclick = () => {
+        let result = confirm("Вы уверены что хотите выйти из аккаунта?")
+
+        if (result !== true) return
+        localStorage.removeItem("user");
         location.assign('/pages/sign-in/')
     }
 }
@@ -61,7 +65,7 @@ export function reloadCards(arr, place) {
         cardCurrency.innerHTML = item.currency
 
         card.style.background = `linear-gradient(90deg,${geneateRGB()}, ${geneateRGB()})`
-        
+
         console.log(geneateRGB());
         place.append(card)
         card.append(cardType, cardCurrency)
