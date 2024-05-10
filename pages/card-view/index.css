@@ -12,270 +12,387 @@ button {
     cursor: pointer;
 }
 
-body {
-    background: lightgray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-}
-
-.container {
+.total-container {
     width: 1200px;
-    height: 600px;
     margin: 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    background: white;
-    border-radius: 5px;
-    overflow: hidden;
+    flex-direction: column;
+    gap: 50px;
+    margin-block: 50px;
 
-    .container-leftSide {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 50px;
-        width: 30%;
+    .container {
+        width: 100%;
         height: 600px;
-        padding-inline: 50px;
-        position: relative;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        background: white;
+        border-radius: 5px;
+        overflow: hidden;
 
-        .back-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 25px;
-            height: 25px;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        .leftSide-top {
+        .container-leftSide {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            justify-content: center;
+            gap: 50px;
+            width: 30%;
+            height: 600px;
+            padding-inline: 50px;
+            position: relative;
 
-            .card-number {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+            .back-btn {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                width: 25px;
+                height: 25px;
 
-                .crd_nmbr {
-                    font-size: 15px;
-                    font-weight: 600;
-                }
-
-                select {
-                    width: 50px;
-                    height: 20px;
-                    font-size: 13px;
-                    font-weight: 500;
+                img {
+                    width: 100%;
+                    height: 100%;
                 }
             }
 
-            .item-box {
+            .leftSide-top {
                 display: flex;
                 flex-direction: column;
-            }
-        }
-
-        .leftSide-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            .totals-box {
-                display: flex;
-                flex-direction: column;
-
-                div {
-                    height: 1px;
-                    width: 200px;
-                    background: #000;
-                    margin-top: 10px;
-                    margin-bottom: 5px;
-                }
-            }
-
-            .loremIPSM {
-                font-size: 12px;
-                font-weight: 600;
-            }
-        }
-    }
-
-    .container-rightSide {
-        width: 70%;
-        height: 600px;
-        display: flex;
-        justify-content: center;
-        background: #3e91ff;
-        border-radius: 50px 0px 0px 50px;
-        flex-direction: column;
-        padding: 50px 220px;
-        position: relative;
-
-        .dot1 {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-radius: 100%;
-            background: white;
-            z-index: 10;
-            top: 50px;
-            left: 50px;
-        }
-
-        .dot2 {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-radius: 100%;
-            background: white;
-            z-index: 10;
-            bottom: 50px;
-            left: 50px;
-        }
-
-        .cardView {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            margin-top: 60px;
-
-            .card {
-                width: 100%;
-                height: 220px;
-                perspective: 1000px;
-                margin: 50px auto;
-                transition: all 0.3s ease;
-            }
-
-            .front,
-            .back {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                backface-visibility: hidden;
-                transition: transform 0.6s ease;
-                transform-style: preserve-3d;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-                user-select: none;
-            }
-
-            .front {
-                background-color: lightblue;
-            }
-
-            .back {
-                background-color: lightcoral;
-                transform: rotateY(180deg);
-            }
-
-            .card.is-flipped .front {
-                transform: rotateY(180deg);
-            }
-
-            .card.is-flipped .back {
-                transform: rotateY(0deg);
-            }
-
-            .card::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: transparent;
-                transition: all 0.3s ease;
-            }
-
-            .card:hover::before {
-                transform: rotateX(20deg) rotateY(-20deg);
-            }
-        }
-
-        .other {
-            width: 100%;
-            height: 250px;
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            .card-data-top {
-                display: flex;
-                flex-direction: row;
                 gap: 10px;
 
-                .card-data-top-left {
+                .card-number {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .crd_nmbr {
+                        font-size: 15px;
+                        font-weight: 600;
+                    }
+
+                    select {
+                        width: 50px;
+                        height: 20px;
+                        font-size: 13px;
+                        font-weight: 500;
+                    }
+                }
+
+                .item-box {
                     display: flex;
                     flex-direction: column;
+                }
+            }
+
+            .leftSide-bottom {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .totals-box {
+                    display: flex;
+                    flex-direction: column;
+
+                    div {
+                        height: 1px;
+                        width: 200px;
+                        background: #000;
+                        margin-top: 10px;
+                        margin-bottom: 5px;
+                    }
+                }
+
+                .loremIPSM {
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .container-rightSide {
+            width: 70%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            background: #3e91ff;
+            border-radius: 50px 0px 0px 50px;
+            flex-direction: column;
+            padding: 50px 220px;
+            position: relative;
+
+            .dot1 {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background: white;
+                z-index: 10;
+                top: 50px;
+                left: 50px;
+            }
+
+            .dot2 {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background: white;
+                z-index: 10;
+                bottom: 50px;
+                left: 50px;
+            }
+
+            .cardView {
+                width: 100%;
+                height: 50%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                margin-top: 60px;
+
+                .card {
+                    width: 100%;
+                    height: 220px;
+                    perspective: 1000px;
+                    margin: 50px auto;
+                    transition: all 0.3s ease;
+                }
+
+                .front,
+                .back {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    backface-visibility: hidden;
+                    transition: transform 0.6s ease;
+                    transform-style: preserve-3d;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+                    user-select: none;
+                    z-index: -1;
+                    overflow: hidden;
+                    background: #464646;
+                    border-radius: 10px;
+                    color: white;
+                }
+
+                .front {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 20px;
+
+                    .front-top {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        img {
+                            width: 60px;
+                            height: 40px;
+                        }
+
+                        span {
+                            font-size: 30px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    .front-bottom {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .front-card-number {
+                            display: flex;
+                            flex-direction: column;
+
+                            .front-card-number-text {
+                                font-size: 12px;
+                                font-weight: 400;
+                            }
+
+                            .cardNumber {
+                                font-size: 20px;
+                                font-weight: 900;
+                                letter-spacing: 1px;
+                                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            }
+                        }
+
+                        .front-other-details {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+
+                            .holder-name {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+
+                                .holder-name-text {
+                                    font-size: 12px;
+                                    font-weight: 400;
+                                }
+
+                                .cardholderName {
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                }
+                            }
+
+                            .expiration-date {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: end;
+
+                                .expiration-date-text {
+                                    font-size: 12px;
+                                    font-weight: 400;
+                                }
+
+                                .cardexpirationDate {
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+
+                    .front-view {
+                        position: absolute;
+                        bottom: -100%;
+                        left: -50%;
+                        width: 605px;
+                        height: 380px;
+                        border-radius: 50%;
+                        background: red;
+                        z-index: -1;
+                    }
+                }
+
+                .back {
+                    transform: rotateY(180deg);
+
+                    .back-view {
+                        position: absolute;
+                        bottom: -100%;
+                        right: -50%;
+                        width: 605px;
+                        height: 380px;
+                        border-radius: 100%;
+                        background: red;
+                        z-index: -1;
+                    }
+                }
+
+                .card.is-flipped .front {
+                    transform: rotateY(180deg);
+                }
+
+                .card.is-flipped .back {
+                    transform: rotateY(0deg);
+                }
+
+                .card::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    transition: all 0.3s ease;
+                }
+
+                .card:hover::before {
+                    transform: rotateX(20deg) rotateY(-20deg);
+                }
+            }
+
+            .other {
+                width: 100%;
+                height: 250px;
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .card-data-top {
+                    display: flex;
+                    flex-direction: row;
                     gap: 10px;
 
-                    input {
-                        width: 220px;
+                    .card-data-top-left {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        input {
+                            width: 220px;
+                            height: 30px;
+                            border-radius: 5px;
+                            border: none;
+                            padding-inline: 10px;
+                            font-size: 13px;
+                        }
+                    }
+
+                    .card-data-top-right {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+
+                        .loremIPSM {
+                            font-size: 10px;
+                            font-weight: 600;
+                        }
+
+                        .checkbox {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            font-size: 14px;
+                            gap: 5px;
+
+                            input {
+                                width: 16px;
+                                height: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .card-data-bottom {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+
+                    input,
+                    button {
                         height: 30px;
+                        width: 105px;
                         border-radius: 5px;
                         border: none;
                         padding-inline: 10px;
                         font-size: 13px;
+                        background: white;
                     }
-                }
-
-                .card-data-top-right {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 8px;
-
-                    .loremIPSM {
-                        font-size: 10px;
-                        font-weight: 600;
-                    }
-
-                    .checkbox {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        font-size: 14px;
-                        gap: 5px;
-
-                        input {
-                            width: 16px;
-                            height: 16px;
-                        }
-                    }
-                }
-            }
-
-            .card-data-bottom {
-                display: flex;
-                flex-direction: row;
-                gap: 10px;
-
-                input,
-                button {
-                    height: 30px;
-                    width: 105px;
-                    border-radius: 5px;
-                    border: none;
-                    padding-inline: 10px;
-                    font-size: 13px;
-                    background: white;
                 }
             }
         }
+    }
+
+    .something-new {
+        width: 100%;
+        height: 600px;
+        border: 2px dashed #000;
     }
 }
