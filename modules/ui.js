@@ -40,13 +40,13 @@ export function createHeader(email, place) {
 
     switch (curr_page) {
         case "cards":
-            cardLink.style.color = blue
+            cardLink.style.color = "blue"
             break
         case "transactions":
-            transactionLink.style.color = blue
+            transactionLink.style.color = "blue"
             break
         case "home":
-            mainLink.style.color = blue
+            mainLink.style.color = "blue"
             break
     }
 }
