@@ -1,4 +1,5 @@
 import axios from "axios"
+import { getData } from "../../modules/http.request"
 
 let card = document.querySelector('.card')
 let select = document.querySelector('#select')
@@ -38,4 +39,20 @@ axios.get('https://api.apilayer.com/fixer/symbols', {
             let opt = new Option(`${key} (${symbols[key]})`, key)
             select.append(opt)
         }
+    })
+
+let id = location.search.split('=').at(-1)
+let cardName = document.querySelector('.front-class-name')
+let cardNumber = document.querySelector('.cardNumber')
+let cardholderName = document.querySelector('.cardholderName')
+
+getData('/cards/' + id)
+    .then(res => {
+        cardName.innerHTML = res.name
+        cardNumber.innerHTML = res.id
+
+        getData('/users/' + res.userId)
+            .then(user => {
+                cardholderName.innerHTML = user.name
+            })
     })

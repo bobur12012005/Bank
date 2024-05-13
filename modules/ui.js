@@ -36,22 +36,19 @@ export function createHeader(email, place) {
         location.assign('/pages/sign-in/')
     }
 
-    let links = [mainLink, cardLink, transactionLink]
+    let curr_page = location.pathname.split('/').at(-2) || "home"
 
-    links.forEach(link => {
-        link.onclick = () => {
-            localStorage.setItem('activeLink', link.href)
-            let activeLink = localStorage.getItem('activeLink')
-
-            if (activeLink) {
-                let activeLinkElement = links.find(l => l.href === activeLink)
-                if (activeLinkElement) {
-                    links.forEach(l => l.style.color = 'black')
-                    activeLinkElement.style.color = 'blue'
-                }
-            }
-        }
-    })
+    switch (curr_page) {
+        case "cards":
+            cardLink.style.color = blue
+            break
+        case "transactions":
+            transactionLink.style.color = blue
+            break
+        case "home":
+            mainLink.style.color = blue
+            break
+    }
 }
 
 function geneateRGB() {
@@ -90,7 +87,7 @@ export function reloadCards(arr, place) {
         card.append(cardType, cardCurrency)
 
         card.onclick = () => {
-            location.assign('/pages/card-view/')
+            location.assign(`/pages/card-view/?id=${item.id}`)
         }
     }
 }
