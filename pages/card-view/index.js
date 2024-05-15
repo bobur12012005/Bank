@@ -9,7 +9,7 @@ let cardName = document.querySelector('.front-class-name')
 let cardNumber = document.querySelector('.cardNumber')
 let cardholderName = document.querySelector('.cardholderName')
 let form = document.forms.namedItem('card-data')
-let answerView = document.querySelector('card-data-bottom')
+let answerView = document.querySelector('.card-data-bottom span')
 let from = document.querySelector('#from')
 let to = document.querySelector('#to')
 
@@ -33,7 +33,7 @@ form.onsubmit = (event) => {
             apikey: import.meta.env.VITE_API_KEY
         }
     })
-        .then(res => answerView.innerHTML = res.data)
+        .then(res => answerView.innerHTML = res.data.result)
 }
 
 axios.get('https://api.apilayer.com/fixer/symbols', {
