@@ -4,6 +4,35 @@ import { getData } from "../../modules/http.request"
 let card = document.querySelector('.card')
 let select = document.querySelector('#select')
 let backBtn = document.querySelector('.back-btn')
+let id = location.search.split('=').at(-1)
+let cardName = document.querySelector('.front-class-name')
+let cardNumber = document.querySelector('.cardNumber')
+let cardholderName = document.querySelector('.cardholderName')
+let form = document.forms.namedItem('card-data')
+
+form.onsubmit = (event) => {
+    event.preventDefault()
+
+    let fm = new FormData(event.target)
+
+    let cardData = {
+        from: fm.get('from'),
+        to: fm.get('to'),
+        amount: fm.get('amount'),
+        date: fm.get('date')
+    }
+
+    let { from, to, amount, date } = cardData
+
+    if (from === "" || to === "" || amount <= 0) return
+
+    axios.get(`https://api.apilayer.com/fixer/convert?to=${to}&from=${from}&amount=${amount}`, {
+        headers: {
+            apikey: import.meta.env.VITE_API_KEY
+        }
+    })
+        .then(res => console.log(res))
+}
 
 card.ondblclick = () => {
     card.classList.toggle('is-flipped')
@@ -40,11 +69,6 @@ axios.get('https://api.apilayer.com/fixer/symbols', {
             select.append(opt)
         }
     })
-
-let id = location.search.split('=').at(-1)
-let cardName = document.querySelector('.front-class-name')
-let cardNumber = document.querySelector('.cardNumber')
-let cardholderName = document.querySelector('.cardholderName')
 
 getData('/cards/' + id)
     .then(res => {
