@@ -1,4 +1,5 @@
 import axios from "axios"
+import Chart from "chart.js/auto"
 import { getData } from "../../modules/http.request"
 
 let card = document.querySelector('.card')
@@ -12,6 +13,8 @@ let form = document.forms.namedItem('card-data')
 let answerView = document.querySelector('.card-data-bottom span')
 let from = document.querySelector('#from')
 let to = document.querySelector('#to')
+let chartContainer = document.querySelector('.something-new')
+let canvas = document.querySelector('#canvas')
 
 form.onsubmit = (event) => {
     event.preventDefault()
@@ -107,4 +110,38 @@ getData('/cards/' + id)
             .then(user => {
                 cardholderName.innerHTML = user.name
             })
+    })
+
+getData('/transactions/')
+.then(res => {
+    let times = []
+    let amounts = []
+        for (let item of res) {
+            times.push(item.time)
+            amounts.push(item.amount)
+        }
+        const data = {
+            labels: times,
+            datasets: [{
+                label: 'My First Dataset',
+                data: amounts,
+                backgroundColor: ['blue'],
+                borderColor: ['lightblue'],
+                borderWidth: 2
+            }]
+        }
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        }
+
+        new Chart(canvas, config)
     })

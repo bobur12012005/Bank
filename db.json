@@ -21,7 +21,7 @@
       "userId": "0.28490384017987935",
       "name": "Visa",
       "currency": "USD",
-      "balance": "990500"
+      "balance": "888400"
     },
     {
       "id": "0.6345757040939735",
@@ -43,6 +43,32 @@
         "name": "Visa",
         "currency": "USD",
         "balance": "1000000"
+      }
+    },
+    {
+      "id": "28638765",
+      "userId": "0.28490384017987935",
+      "walletId": "0.7255402779115492",
+      "amount": "2100",
+      "category": "Телефон",
+      "time": "15.05.2024",
+      "wallet": {
+        "name": "Visa",
+        "currency": "USD",
+        "balance": "990500"
+      }
+    },
+    {
+      "id": "70495977",
+      "userId": "0.28490384017987935",
+      "walletId": "0.7255402779115492",
+      "amount": "100000",
+      "category": "Дом",
+      "time": "15.05.2024",
+      "wallet": {
+        "name": "Visa",
+        "currency": "USD",
+        "balance": "988400"
       }
     }
   ]
