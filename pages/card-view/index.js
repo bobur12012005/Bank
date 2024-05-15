@@ -9,6 +9,9 @@ let cardName = document.querySelector('.front-class-name')
 let cardNumber = document.querySelector('.cardNumber')
 let cardholderName = document.querySelector('.cardholderName')
 let form = document.forms.namedItem('card-data')
+let answerView = document.querySelector('card-data-bottom')
+let from = document.querySelector('#from')
+let to = document.querySelector('#to')
 
 form.onsubmit = (event) => {
     event.preventDefault()
@@ -19,20 +22,45 @@ form.onsubmit = (event) => {
         from: fm.get('from'),
         to: fm.get('to'),
         amount: fm.get('amount'),
-        date: fm.get('date')
     }
 
-    let { from, to, amount, date } = cardData
+    let { from, to, amount } = cardData
 
-    if (from === "" || to === "" || amount <= 0) return
+    if (amount <= 0) return
 
     axios.get(`https://api.apilayer.com/fixer/convert?to=${to}&from=${from}&amount=${amount}`, {
         headers: {
             apikey: import.meta.env.VITE_API_KEY
         }
     })
-        .then(res => console.log(res))
+        .then(res => answerView.innerHTML = res.data)
 }
+
+axios.get('https://api.apilayer.com/fixer/symbols', {
+    headers: {
+        apikey: import.meta.env.VITE_API_KEY
+    }
+})
+    .then(res => {
+        let symbols = res.data.symbols
+        for (let key in symbols) {
+            let opt = new Option(`${key} (${symbols[key]})`, key)
+            from.append(opt)
+        }
+    })
+
+axios.get('https://api.apilayer.com/fixer/symbols', {
+    headers: {
+        apikey: import.meta.env.VITE_API_KEY
+    }
+})
+    .then(res => {
+        let symbols = res.data.symbols
+        for (let key in symbols) {
+            let opt = new Option(`${key} (${symbols[key]})`, key)
+            to.append(opt)
+        }
+    })
 
 card.ondblclick = () => {
     card.classList.toggle('is-flipped')

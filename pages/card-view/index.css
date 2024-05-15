@@ -385,6 +385,15 @@ button {
                         font-size: 13px;
                         background: white;
                     }
+
+                    span {
+                        width: 105px;
+                        height: 30px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 5px;
+                    }
                 }
             }
         }
