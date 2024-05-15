@@ -335,7 +335,7 @@ button {
                         flex-direction: column;
                         gap: 10px;
 
-                        input {
+                        select {
                             width: 220px;
                             height: 30px;
                             border-radius: 5px;
@@ -393,6 +393,7 @@ button {
                         justify-content: center;
                         align-items: center;
                         border-radius: 5px;
+                        background: white;
                     }
                 }
             }
