@@ -46,18 +46,6 @@ axios.get('https://api.apilayer.com/fixer/symbols', {
         for (let key in symbols) {
             let opt = new Option(`${key} (${symbols[key]})`, key)
             from.append(opt)
-        }
-    })
-
-axios.get('https://api.apilayer.com/fixer/symbols', {
-    headers: {
-        apikey: import.meta.env.VITE_API_KEY
-    }
-})
-    .then(res => {
-        let symbols = res.data.symbols
-        for (let key in symbols) {
-            let opt = new Option(`${key} (${symbols[key]})`, key)
             to.append(opt)
         }
     })
